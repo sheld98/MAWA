@@ -24,14 +24,30 @@
     <aside class="sidebar">
         <h2>Announcements</h2>
         <ul class="announcements">
-            <li>No new announcements</li>
+            <li>We are having our meeting today at 2145hrs</li>
         </ul>
 
         <h2>Repositories</h2>
         <ul class="repositories">
             <li><a href="#">Welfare Documents</a></li>
+            <li>
+                <div class="document">
+                    <div class="document-name">Minutes from meeting 5</div>
+                    <div class="document-type">pdf</div>
+                    <a href="documents/meeting5.pdf" download class="download-link">Download</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1PsKy9EtcbynGEGU317RenpPj7VBSF7SIzNgJrQEwJ1U/edit?usp=sharing"
+                       target="_blank" class="google-sheets-link">Beneficiaries and next of kin</a>
+                </div>
+            </li>
             <li><a href="#">Financial Records</a></li>
             <li><a href="#">Constitution</a></li>
+            <li>
+                <div class="document">
+                    <div class="document-name">Constitution</div>
+                    <div class="document-type">PDF</div>
+                    <a href="documents/Constitution1.pdf" download class="download-link">Download</a>
+                </div>
+            </li>
         </ul>
     </aside>
 
@@ -45,7 +61,19 @@
         </div>
 
         <!-- Plus Button for Adding Blogs -->
-        <button id="addBlogBtn" class="add-blog-btn">+ Add Blog</button>
+        <button id="addBlogBtn" class="add-blog-btn" style="
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make the button inline */
+            font-size: 16px; /* Increase font size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        ">+ Add Blog</button>
     </main>
 
     <script src="script.js"></script>

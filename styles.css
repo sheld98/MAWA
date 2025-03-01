@@ -14,11 +14,33 @@ html, body {
 body {
     margin-left: 25px;
 }
+.content {
+    margin-left: 0; /* Remove offset for sidebar */
+    padding: 10px;
+}
+
+.content h1 {
+    font-size: 28px;
+}
+
+.content h2 {
+    font-size: 22px;
+}
+
+.content h3 {
+    font-size: 18px;
+    color: #e68900;
+}
+
+.login-container {
+    width: 90%;
+    padding: 20px;
+}
 
 /* ===== Header Styling ===== */
 header {
     background-color: #00796b; /* Dark green background */
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between; /* Space between logo and nav-links */
     align-items: center;
@@ -26,9 +48,20 @@ header {
     position: relative; /* Ensures the header is a positioning context */
 }
 
-/* Logo Styling */
-.logo {
-    font-size: 32px;
+/* ===== Logo Styling (Updated) ===== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+.logo-container img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container span {
+    font-size: 24px;
     font-weight: bold;
     color: #ff9800;
     text-transform: uppercase;
@@ -36,12 +69,12 @@ header {
     transition: color 0.3s, transform 0.3s;
 }
 
-.logo:hover {
+.logo-container:hover span {
     color: #e68900;
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Navigation Links */
+/* ===== Navigation Links ===== */
 .nav-links {
     display: flex;
     gap: 15px;
@@ -89,11 +122,30 @@ header {
     width: 250px;
     height: calc(100% - 80px);
     background: #004d40;
-    color: white;
+    color: #3307d1;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease-in-out;
     z-index: 1000;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Sidebar Scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #eaeaea; /* Track color */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker thumb on hover */
 }
 
 /* Active Sidebar */
@@ -125,19 +177,23 @@ header {
     background: #00695c;
 }
 
-/* Sidebar Upload Button */
-.uploadBtn {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+/* Sidebar Document Styling */
+.sidebar .document {
+    background-color: #17d8a8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.uploadBtn:hover {
-    background-color: #e68900;
+.sidebar .document:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 /* ===== Main Content Styling ===== */
@@ -150,7 +206,7 @@ header {
 }
 
 .content.active {
-    margin-left: 0; /* No offset when sidebar is open */
+    margin-left: 0;
 }
 
 .content h1 {
@@ -171,30 +227,6 @@ header {
     color: #00796b;
     margin-top: 20px;
     margin-bottom: 10px;
-}
-
-.content p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.content ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.content ul li {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.content ul li strong {
-    color: #00796b;
 }
 
 /* ===== Login Form Styling ===== */
@@ -225,16 +257,6 @@ header {
     margin-bottom: 5px;
     color: white;
 }
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
 .login-btn {
     width: 100%;
     padding: 12px;
@@ -250,15 +272,29 @@ header {
 .login-btn:hover {
     background: #1E7A1E;
 }
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     body {
-        margin-left: 15px; /* Slightly reduce margin for smaller screens */
+        margin-left: 15px;
     }
 
-    .logo {
-        font-size: 24px;
+    .logo-container span {
+        font-size: 18px;
     }
 
     .nav-links {
@@ -268,18 +304,18 @@ header {
 
     .sidebar {
         width: 100%;
-        left: -100%; /* Hide sidebar on small screens */
+        left: -100%;
         position: fixed;
         height: 100%;
         margin-top: 0;
     }
 
     .sidebar.active {
-        left: 0; /* Show sidebar when active */
+        left: 0;
     }
 
     .content {
-        margin-left: 0; /* Remove offset for sidebar */
+        margin-left: 0;
         padding: 10px;
     }
 
@@ -300,30 +336,3 @@ header {
         padding: 20px;
     }
 }
-/* Add Blog Button Styling */
-.add-blog-btn {
-    background-color: #228B22; /* Forest green */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-    display: inline-block;
-    text-align: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.add-blog-btn:hover {
-    background-color: #1E7A1E; /* Darker forest green */
-    transform: scale(1.05);
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.add-blog-btn:active {
-    transform: scale(0.98);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
