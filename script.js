@@ -9,7 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
         "othienosheldon@gmail.com": "0720973275", // Admin 1
         "mouriceambuche@gmail.com": "0706657428", // Admin 2
         "stephenomondi667@gmail.com": "0707070767", // Regular User
-        "bukachivince281@gmail.com": "0798490505" // New User
+        "bukachivince281@gmail.com": "0798490505", // New User
+        "ogotelvyz@gmail.com": "0708374191", // New User
+        "patricktelwa056@gmail.com": "+97471815533", // New User
+        "phanicehope17@gmail.com": "0700193451", // New User
+        "oduorstephine4@gmail.com": "0701738937", // New User
+        "edwinnyanje94@gmail.com": "0742120397", // New User
+        "philipambani20@gmail.com": "0700429223", // New User
+        "clementinaoyiengo1998@gmail.com": "0792902616", // New User
+        "info.duyu@gmail.com": "0748890006", // New User
+        "mapesageophrey12@gmail.com": "0740944490", // New User
+        "mervin.shitindo@gmail.com": "0746270207", // New User
+        "onyangoemmanuel45@gmail.com": "0796180982", // New User
+        "abutibonface22@gmail.com": "0111307366", // New User
+        "bradleybrian765@gmail.com": "0741973374", // New User
+        "shariffibnaslam@gmail.com": "0746359653", // New User
+        "munyendokevin98@gmail.com": "0711607580", // New User
+        "lukangatia19@gmail.com": "0745047989", // New User
+        "hadetesharon@gmail.com": "0746273815" // New User
     };
 
     // Check if the session has expired (30 minutes)
