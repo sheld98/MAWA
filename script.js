@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const validAccounts = {
         "othienosheldon@gmail.com": "0720973275", // Admin 1
         "mouriceambuche@gmail.com": "0706657428", // Admin 2
-        "stephenomondi667@gmail.com": "0707070767" // Regular User
-        
+        "stephenomondi667@gmail.com": "0707070767", // Regular User
+        "bukachivince281@gmail.com": "0798490505" // New User
     };
 
-    // Check if the session has expired (5 minutes)
+    // Check if the session has expired (30 minutes)
     if (isLoggedIn && loginTime) {
         const currentTime = new Date().getTime();
-        const sessionDuration = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const sessionDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
         if (currentTime - parseInt(loginTime) > sessionDuration) {
             // Session expired
             sessionStorage.clear(); // Clear session data
