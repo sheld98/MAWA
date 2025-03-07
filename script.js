@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "munyendokevin98@gmail.com": "0711607580", // New User
         "lukangatia19@gmail.com": "0745047989", // New User
         "hadetesharon@gmail.com": "0746273815" // New User
-        "brianswat777@gmail.com": "0799166274" // New User
-        "
     };
 
     // Check if the session has expired (30 minutes)
